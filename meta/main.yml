@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Nick Henry
+  description: Installs VIM
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: EL
+      versions:
+      - all
+    - name: Fedora
+      versions:
+      - all
+    - name: Debian
+      versions:
+      - all
+    - name: Ubuntu
+      versions:
+      - all

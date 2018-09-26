@@ -1,0 +1,8 @@
+---
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Ensure vim package is installed.
+  package:
+    name: "{{ vim_package }}"
+    state: present
