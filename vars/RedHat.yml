@@ -1,2 +1,3 @@
 ---
 vim_package: vim-enhanced
+vim_vimfiles_dir: /usr/share/vim/vimfiles

@@ -2,7 +2,7 @@ galaxy_info:
   author: Nick Henry
   description: Installs VIM
   license: MIT
-  min_ansible_version: 1.2
+  min_ansible_version: 2.5
   platforms:
     - name: EL
       versions:
@@ -16,3 +16,5 @@ galaxy_info:
     - name: Ubuntu
       versions:
       - all
+dependencies:
+    - src: grog.user

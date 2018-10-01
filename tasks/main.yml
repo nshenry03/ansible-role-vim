@@ -6,3 +6,57 @@
   package:
     name: "{{ vim_package }}"
     state: present
+
+- name: Create a new subdirectory 'vimfiles'
+  file:
+    path: "{{ vim_vimfiles_dir }}"
+    state: directory
+    mode: 0775
+    owner: root
+    group: root
+
+- name: Install Vim Bash-Support
+  unarchive:
+    src: "{{ vim_bash_support_src }}"
+    dest: "{{ vim_vimfiles_dir }}"
+    creates: "{{ vim_vimfiles_dir }}/bash-support/README.md"
+    remote_src: yes
+    extra_opts:
+      - --strip-components=1
+
+- name: Install Vim Bash-Support help documents
+  shell: vim -c ':helptags $VIM/vimfiles/doc' -c ':q'
+  args:
+    creates: "{{ vim_vimfiles_dir}}/doc/tags"
+
+- name: Setup User(s)
+  import_role:
+    name: grog.user
+
+- name: Create '.vim' directories for users
+  file:
+    path: "/home/{{ item.0.name }}/{{ item.1 }}"
+    state: directory
+    owner: "{{ item.0.name }}"
+    group: "{{ item.0.name }}"
+    mode: 0775
+  loop: "{{ [user_list, user_list_host, user_list_group] | flatten | product(['.vim', '.vim.backupdir', '.vim.swapdir', '.vim/templates']) | list }}"
+
+- name: Copy the .vimrc
+  copy:
+    src: ".vimrc"
+    dest: "/home/{{ item.name }}/.vimrc"
+    force: no
+    owner: "{{ item.name }}"
+    group: "{{ item.name }}"
+    mode: 0444
+  loop: "{{ [user_list, user_list_host, user_list_group] | flatten }}"
+
+- name: Configure Vim Bash-Support per user
+  template:
+    src: personal.templates.j2
+    dest: "/home/{{ item.name }}/.vim/templates"
+    owner: "{{ item.name }}"
+    group: "{{ item.name }}"
+    mode: 0444
+  loop: "{{ [user_list, user_list_host, user_list_group] | flatten }}"

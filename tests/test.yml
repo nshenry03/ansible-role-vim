@@ -1,6 +1,14 @@
 ---
 - hosts: all
 
+  vars:
+    user_list:
+      - name: jdoe
+        full_name: John Doe
+        initials: JD
+        email: john.doe@example.com
+        organization: Acme, Inc.
+
   pre_tasks:
     - name: Update apt cache.
       apt:

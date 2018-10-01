@@ -1,0 +1,21 @@
+§ =============================================================
+§  {{ ansible_managed }}
+§ =============================================================
+§  Personal Information
+§ =============================================================
+
+SetMacro( 'AUTHOR',       '{{ item.full_name | default('YOUR NAME', true) }}' )
+SetMacro( 'AUTHORREF',    '{{ item.initials     if item.initials is defined else '' }}' )
+SetMacro( 'EMAIL',        '{{ item.email        if item.email is defined else '' }}' )
+SetMacro( 'ORGANIZATION', '{{ item.organization if item.organization is defined else '' }}' )
+SetMacro( 'COMPANY',      '{{ item.company      if item.company is defined else '' }}' )
+SetMacro( 'COPYRIGHT',    '{{ item.copyright | default('Copyright (c) |YEAR|, |AUTHOR|',    true) }}' )
+SetMacro( 'LICENSE',      '{{ item.license   | default('Proprietary - All Rights Reserved', true) }}' )
+
+§ =============================================================
+§  Date and Time Format
+§ =============================================================
+
+SetFormat( 'DATE', '{{ item.vim_date_format | default('%F', true)    }}' )
+SetFormat( 'TIME', '{{ item.vim_time_format | default('%H:%M', true) }}' )
+SetFormat( 'YEAR', '{{ item.vim_year_format | default('%Y', true)    }}' )
