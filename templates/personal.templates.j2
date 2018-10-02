@@ -1,21 +1,19 @@
 § =============================================================
-§  {{ ansible_managed }}
-§ =============================================================
 §  Personal Information
 § =============================================================
 
-SetMacro( 'AUTHOR',       '{{ item.full_name | default('YOUR NAME', true) }}' )
-SetMacro( 'AUTHORREF',    '{{ item.initials     if item.initials is defined else '' }}' )
-SetMacro( 'EMAIL',        '{{ item.email        if item.email is defined else '' }}' )
-SetMacro( 'ORGANIZATION', '{{ item.organization if item.organization is defined else '' }}' )
-SetMacro( 'COMPANY',      '{{ item.company      if item.company is defined else '' }}' )
-SetMacro( 'COPYRIGHT',    '{{ item.copyright | default('Copyright (c) |YEAR|, |AUTHOR|',    true) }}' )
-SetMacro( 'LICENSE',      '{{ item.license   | default('Proprietary - All Rights Reserved', true) }}' )
+SetMacro( 'AUTHOR',       '{{ item.full_name    | default(vim_bash_support_full_name)    }}' )
+SetMacro( 'AUTHORREF',    '{{ item.initials     | default(vim_bash_support_initials)     }}' )
+SetMacro( 'EMAIL',        '{{ item.email        | default(vim_bash_support_email)        }}' )
+SetMacro( 'ORGANIZATION', '{{ item.organization | default(vim_bash_support_organization) }}' )
+SetMacro( 'COMPANY',      '{{ item.company      | default(vim_bash_support_company)      }}' )
+SetMacro( 'COPYRIGHT',    '{{ item.copyright    | default(vim_bash_support_copyright)    }}' )
+SetMacro( 'LICENSE',      '{{ item.license      | default(vim_bash_support_license)      }}' )
 
 § =============================================================
 §  Date and Time Format
 § =============================================================
 
-SetFormat( 'DATE', '{{ item.vim_date_format | default('%F', true)    }}' )
-SetFormat( 'TIME', '{{ item.vim_time_format | default('%H:%M', true) }}' )
-SetFormat( 'YEAR', '{{ item.vim_year_format | default('%Y', true)    }}' )
+SetFormat( 'DATE', '{{ item.vim_date_format | default(vim_bash_support_date_format) }}' )
+SetFormat( 'TIME', '{{ item.vim_time_format | default(vim_bash_support_time_format) }}' )
+SetFormat( 'YEAR', '{{ item.vim_year_format | default(vim_bash_support_year_format) }}' )
