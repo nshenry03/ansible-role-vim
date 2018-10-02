@@ -7,11 +7,11 @@ Installs VIM
 
 The following roles where designed to neatly work together with this role:
 
-- [user][grog.user], for managing users.
-- [authorized-key][grog.authorized-key], for managing authorized-keys.
-- [sudo][grog.sudo], for managing sudo rights.
+- [user](https://github.com/GROG/ansible-role-user), for managing users.
+- [authorized-key](https://github.com/GROG/ansible-role-authorized-key), for managing authorized-keys.
+- [sudo](https://github.com/GROG/ansible-role-sudo), for managing sudo rights.
 
-The [management-user][grog.management-user] role combines all these roles in
+The [management-user](https://github.com/GROG/ansible-role-management-user) role combines all these roles in
 one easy to use role.
 
 Requirements
@@ -30,13 +30,13 @@ Role Variables
 | `vim_bash_support_email`        | Default value for bash-support's `EMAIL` SetMacro             | `''`                                                                        |
 | `vim_bash_support_organization` | Default value for bash-support's `ORGANIZATION` SetMacro      | `''`                                                                        |
 | `vim_bash_support_company`      | Default value for bash-support's `COMPANY` SetMacro           | `''`                                                                        |
-| `vim_bash_support_copyright`    | Default value for bash-support's `COPYRIGHT` SetMacro         | `Copyright (c) |YEAR|, |AUTHOR|`                                            |
+| `vim_bash_support_copyright`    | Default value for bash-support's `COPYRIGHT` SetMacro         | `Copyright (c) \|YEAR\|, \|AUTHOR\|`                                        |
 | `vim_bash_support_license`      | Default value for bash-support's `LICENSE` SetMacro           | `GNU General Public License`                                                |
 | `vim_bash_support_date_format`  | Default value for bash-support's `DATE` SetFormat             | `%x`                                                                        |
 | `vim_bash_support_time_format`  | Default value for bash-support's `TIME` SetFormat             | `%H:%M`                                                                     |
 | `vim_bash_support_year_format`  | Default value for bash-support's `YEAR` SetFormat             | `%Y`                                                                        |
 
-See [user][grog.user] role for additional role variables.
+See [user](https://github.com/GROG/ansible-role-user) role for additional role variables.
 
 #### `user_list` details
 
@@ -84,7 +84,7 @@ user_list:
 Dependencies
 ------------
 
--   [grog.user][grog.user]
+-   [grog.user](https://github.com/GROG/ansible-role-user)
 
 Example Playbook
 ----------------
