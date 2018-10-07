@@ -2,13 +2,13 @@
 §  Personal Information
 § =============================================================
 
-SetMacro( 'AUTHOR',       '{{ item.full_name    | default(vim_bash_support_full_name)    }}' )
-SetMacro( 'AUTHORREF',    '{{ item.initials     | default(vim_bash_support_initials)     }}' )
-SetMacro( 'EMAIL',        '{{ item.email        | default(vim_bash_support_email)        }}' )
-SetMacro( 'ORGANIZATION', '{{ item.organization | default(vim_bash_support_organization) }}' )
-SetMacro( 'COMPANY',      '{{ item.company      | default(vim_bash_support_company)      }}' )
-SetMacro( 'COPYRIGHT',    '{{ item.copyright    | default(vim_bash_support_copyright)    }}' )
-SetMacro( 'LICENSE',      '{{ item.license      | default(vim_bash_support_license)      }}' )
+SetMacro( 'AUTHOR',       '{{ item.full_name    | default(user_full_name)             }}' )
+SetMacro( 'AUTHORREF',    '{{ item.initials     | default(user_initials)              }}' )
+SetMacro( 'EMAIL',        '{{ item.email        | default(user_email)                 }}' )
+SetMacro( 'ORGANIZATION', '{{ item.organization | default(user_organization)          }}' )
+SetMacro( 'COMPANY',      '{{ item.company      | default(user_company)               }}' )
+SetMacro( 'COPYRIGHT',    '{{ item.copyright    | default(vim_bash_support_copyright) }}' )
+SetMacro( 'LICENSE',      '{{ item.license      | default(vim_bash_support_license)   }}' )
 
 § =============================================================
 §  Date and Time Format

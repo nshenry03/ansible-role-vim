@@ -24,17 +24,17 @@ Role Variables
 
 | Variable                        | Description                                                   | Default value                                                               |
 |---------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------|
-| `vim_bash_support_src`          | Default URL for bash-support archive. Needs to be a tar file  | `https://github.com/WolfgangMehner/bash-support/archive/version-4.3.tar.gz` |
-| `vim_bash_support_full_name`    | Default value for bash-support's `AUTHOR` SetMacro            | `YOUR NAME`                                                                 |
-| `vim_bash_support_initials`     | Default value for bash-support's `AUTHORREF` SetMacro         | `''`                                                                        |
-| `vim_bash_support_email`        | Default value for bash-support's `EMAIL` SetMacro             | `''`                                                                        |
-| `vim_bash_support_organization` | Default value for bash-support's `ORGANIZATION` SetMacro      | `''`                                                                        |
-| `vim_bash_support_company`      | Default value for bash-support's `COMPANY` SetMacro           | `''`                                                                        |
+| `user_full_name`                | Default value for bash-support's `AUTHOR` SetMacro            | `YOUR NAME`                                                                 |
+| `user_initials`                 | Default value for bash-support's `AUTHORREF` SetMacro         | `''`                                                                        |
+| `user_email`                    | Default value for bash-support's `EMAIL` SetMacro             | `''`                                                                        |
+| `user_organization`             | Default value for bash-support's `ORGANIZATION` SetMacro      | `''`                                                                        |
+| `user_company`                  | Default value for bash-support's `COMPANY` SetMacro           | `''`                                                                        |
 | `vim_bash_support_copyright`    | Default value for bash-support's `COPYRIGHT` SetMacro         | `Copyright (c) \|YEAR\|, \|AUTHOR\|`                                        |
 | `vim_bash_support_license`      | Default value for bash-support's `LICENSE` SetMacro           | `GNU General Public License`                                                |
 | `vim_bash_support_date_format`  | Default value for bash-support's `DATE` SetFormat             | `%x`                                                                        |
 | `vim_bash_support_time_format`  | Default value for bash-support's `TIME` SetFormat             | `%H:%M`                                                                     |
 | `vim_bash_support_year_format`  | Default value for bash-support's `YEAR` SetFormat             | `%Y`                                                                        |
+| `vim_bash_support_src`          | Default URL for bash-support archive. Needs to be a tar file  | `https://github.com/WolfgangMehner/bash-support/archive/version-4.3.tar.gz` |
 
 See [user](https://github.com/GROG/ansible-role-user) role for additional role variables.
 
@@ -50,11 +50,11 @@ the list can have following attributes in addition to those defined in
 
 | Variable          | Description                                | Required | Default                         |
 |-------------------|--------------------------------------------|----------|---------------------------------|
-| `full_name`       | User's full name                           | no       | `vim_bash_support_full_name`    |
-| `initials`        | User's initials                            | no       | `vim_bash_support_initials`     |
-| `email`           | User's email                               | no       | `vim_bash_support_email`        |
-| `organization`    | User's organization                        | no       | `vim_bash_support_organization` |
-| `company`         | User's company                             | no       | `vim_bash_support_company`      |
+| `full_name`       | User's full name                           | no       | `user_full_name`                |
+| `initials`        | User's initials                            | no       | `user_initials`                 |
+| `email`           | User's email                               | no       | `user_email`                    |
+| `organization`    | User's organization                        | no       | `user_organization`             |
+| `company`         | User's company                             | no       | `user_company`                  |
 | `copyright`       | Copyright to use in VIM templates for user | no       | `vim_bash_support_copyright`    |
 | `license`         | License to use in VIM templates for user   | no       | `vim_bash_support_license`      |
 | `vim_date_format` | VIM date format to use for user            | no       | `vim_bash_support_date_format`  |
